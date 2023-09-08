@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     //Signal and slot connection for "Submit Button"
     connect(ui->subBtn, &QPushButton::clicked, this, &MainWindow::eqnSolver);
+    connect(ui->rmBtn, &QPushButton::clicked, this, &MainWindow::rmEqn);
 }
 
 MainWindow::~MainWindow()
@@ -59,3 +60,15 @@ void MainWindow::eqnSolver()
         ui->ansHere->setText(QString("The solved value of 'x' are: %1 & %2").arg(ans1).arg(ans2));
     }
 }
+
+void MainWindow::rmEqn()
+{
+    ui->ansHere->setText(QString("Answer will appear here."));
+    ui->aHere->setText(QString(""));
+    ui->bHere->setText(QString(""));
+    ui->cHere->setText(QString(""));
+
+    ui->aHere->cursor();
+}
+
+

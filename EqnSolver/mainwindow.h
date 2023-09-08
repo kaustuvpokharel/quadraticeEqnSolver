@@ -24,6 +24,7 @@ public:
 public slots:
     //Slot to connect submit button to the input equation
     void eqnSolver();
+    void rmEqn();
 
 private:
     Ui::MainWindow *ui;
