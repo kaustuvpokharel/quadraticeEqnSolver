@@ -5,7 +5,7 @@ int main()
 {
     float a,b,c;
     float anshalf, anshalf1, ans1, ans2;
-    //this
+    //this is it
 
     printf("Enter the value of 'a' in \"ax^2 + bx + c\": ");
     scanf("%f", &a);
