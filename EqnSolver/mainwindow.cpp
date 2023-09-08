@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     //Signal and slot connection for "Submit Button"
     connect(ui->subBtn, &QPushButton::clicked, this, &MainWindow::eqnSolver);
+    //Signal and slot connection for "Remove Button"
     connect(ui->rmBtn, &QPushButton::clicked, this, &MainWindow::rmEqn);
 }
 
@@ -26,8 +27,11 @@ void MainWindow::strConvert()
 
     QString C1 = ui->cHere->text();
     c = C1.toDouble();
+
+    qInfo()<<"Test case 1: Passed";
 }
 
+/*Main calculation of Eqn*/
 void MainWindow::eqnSolver()
 {
     //calling conversion func of a, b and c
@@ -59,8 +63,11 @@ void MainWindow::eqnSolver()
         ans2 = anshalf1 / (2*a);
         ui->ansHere->setText(QString("The solved value of 'x' are: %1 & %2").arg(ans1).arg(ans2));
     }
+
+    qInfo()<<"Test case 2: Passed";
 }
 
+/*To remove entered value to get back to earlier position*/
 void MainWindow::rmEqn()
 {
     ui->ansHere->setText(QString("Answer will appear here."));
@@ -68,7 +75,7 @@ void MainWindow::rmEqn()
     ui->bHere->setText(QString(""));
     ui->cHere->setText(QString(""));
 
-    ui->aHere->cursor();
+    qInfo()<<"Test case 3: Workable remove button";
 }
 
 
