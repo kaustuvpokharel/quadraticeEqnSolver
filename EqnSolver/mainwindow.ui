@@ -66,7 +66,7 @@
            </font>
           </property>
           <property name="text">
-           <string>X^2</string>
+           <string>X^2            </string>
           </property>
          </widget>
         </item>
@@ -91,7 +91,7 @@
            </font>
           </property>
           <property name="text">
-           <string>X</string>
+           <string>  X                 </string>
           </property>
          </widget>
         </item>
@@ -112,11 +112,11 @@
          <widget class="QLabel" name="label_4">
           <property name="font">
            <font>
-            <family>Academy Engraved LET</family>
+            <family>Poppins</family>
            </font>
           </property>
           <property name="text">
-           <string>C</string>
+           <string>C   </string>
           </property>
          </widget>
         </item>
@@ -221,18 +221,6 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QPushButton" name="rmBtn">
-          <property name="font">
-           <font>
-            <family>Poppins</family>
-           </font>
-          </property>
-          <property name="text">
-           <string>Remove</string>
-          </property>
-         </widget>
-        </item>
-        <item>
          <widget class="QPushButton" name="subBtn">
           <property name="font">
            <font>
@@ -244,15 +232,31 @@
           </property>
          </widget>
         </item>
+        <item>
+         <widget class="QPushButton" name="rmBtn">
+          <property name="font">
+           <font>
+            <family>Poppins</family>
+           </font>
+          </property>
+          <property name="text">
+           <string>Remove</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </item>
       <item>
-       <widget class="QLineEdit" name="ansHere">
+       <widget class="QLabel" name="ansHere">
         <property name="font">
          <font>
           <family>Poppins</family>
+          <pointsize>14</pointsize>
           <bold>true</bold>
          </font>
+        </property>
+        <property name="text">
+         <string>Answer will appear here.</string>
         </property>
        </widget>
       </item>

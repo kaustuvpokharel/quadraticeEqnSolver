@@ -1,11 +1,11 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
-#include <string.h>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    //Signal and slot connection for "Submit Button"
     connect(ui->subBtn, &QPushButton::clicked, this, &MainWindow::eqnSolver);
 }
 
@@ -29,5 +29,33 @@ void MainWindow::strConvert()
 
 void MainWindow::eqnSolver()
 {
+    //calling conversion func of a, b and c
+    strConvert();
 
+    //Constant value for Qudratic Formula
+    const float root = 0.5;
+    const int sq = 2;
+
+    //Number of types- no of roots
+    float noType = pow(b,sq) - (4*a*c);
+    if(noType < 0)
+    {
+        ui->ansHere->setText(QString("There are NO real roots."));
+    }
+    else if(noType == 0)
+    {
+        ui->ansHere->setText(QString("There is ONE real roots."));
+        anshalf = (- b) + pow(noType, root);
+        ans1 = anshalf / (2*a);
+        ui->ansHere->setText(QString("The solved value of 'x' is: %1").arg(ans1));
+    }
+    else if(noType > 0)
+    {
+        ui->ansHere->setText(QString("There is TWO real roots."));
+        anshalf1 = (-b) + pow(noType, root);
+        anshalf = (-b) - pow(noType, root);
+        ans1 = anshalf / (2*a);
+        ans2 = anshalf1 / (2*a);
+        ui->ansHere->setText(QString("The solved value of 'x' are: %1 & %2").arg(ans1).arg(ans2));
+    }
 }
